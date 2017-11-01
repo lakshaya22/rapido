@@ -1,0 +1,103 @@
+<div class="modal-header bg-primary text-center " style="padding-bottom: 0px;font-size:20px;">
+    <div class="form-group">
+        <span ng-if="state=='new'">Add Task</span>
+        <span ng-if="state=='edit'">Edit Task</span>
+
+    </div>
+</div>
+<div class="modal-body" style="overflow: auto;">
+    <form name="task" style="overflow: auto;">
+
+
+
+
+
+        <div class="col-sm-6">
+            <!--{{personal}}-->
+            <div class="form-group">
+                <label class="control-label">Heading
+                    <span class="required text-lg">*</span>
+                </label>
+                <input ng-required="true" name="heading" type="text" class="form-control" ng-model="taskData.heading">
+                <!--<span class="help-block m-b-none required" ng-show="!personal.name && clicked">Enter Name</span>-->
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <!--{{personal}}-->
+            <div class="form-group">
+                <label class="control-label">Description
+                    <span class="required text-lg">*</span>
+                </label>
+                <input ng-required="true" name="desc" type="text" class="form-control" ng-model="taskData.description">
+                <!--<span class="help-block m-b-none required" ng-show="!personal.name && clicked">Enter Name</span>-->
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <label class="control-label">Due Date</label>
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker1'>
+                    <input id="dueDate" ui-jq="inputmask" ng-model="taskData.due_date" ui-options="'datetime12' ,{placeholder:'DD/MM/YYYY HH:MM xm'}"
+                        type='text' class="form-control" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-12">
+            <label class="control-label">User</label>
+            <select class="form-control" ng-options="src.id as src.username for src in users track by src.id" ng-model="taskData.user_id">
+
+
+            </select>
+        </div>
+
+        <div class="col-sm-12">
+            <label class="control-label">Stage</label>
+            <select class="form-control" ng-options="src1.id as src1.stage for src1 in stages track by src1.id" ng-model="taskData.stage_id">
+
+
+            </select>
+        </div>
+
+
+
+        <!-- <div class="col-sm-12" style="padding-bottom:30px">
+            <label class="control-label">Enter Log Details</label>
+            <textarea ng-model="logData.content" class="form-control" rows="3"></textarea>
+        </div> -->
+
+        <div class="col-sm-12" style="padding-top: 15px">
+
+            <button ng-disabled="!task.heading.$valid || !task.desc.$valid" type="button" class="btn btn-info pull-right" ng-click="save(taskData)"
+                style="text-align:center;">
+                <span ng-if="state=='new'">Create</span>
+                <span ng-if="state=='edit'">Edit</span>
+            </button>
+
+            &nbsp;&nbsp;
+            <button type="button" class="btn btn-danger pull-right" ng-click="cancel()" style="text-align:center;margin-right: 10px">Cancel</button>
+        </div>
+
+    </form>
+
+    <script type="text/javascript">
+        $(function () {
+            $('#datetimepicker1').datetimepicker({
+                format: 'DD/MM/YYYY',
+                icons: {
+                    time: "fa fa-clock-o fa-2x",
+                    date: "fa fa-calendar fa-2x",
+                    up: "fa fa-arrow-up",
+                    down: "fa fa-arrow-down"
+                }
+            });
+
+        });
+
+
+    </script>
+</div>

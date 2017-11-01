@@ -1,0 +1,30 @@
+<div class="modal-header bg-danger text-center " style="padding-bottom: 0px;font-size:20px;background-color:#e94e4e;color:white">
+    <div class="form-group">
+        <span>Delete User</span>
+    </div>
+</div>
+<div class="modal-body" style="overflow: auto;">
+    <form name="user" style="overflow: auto;">
+
+
+        <div style="background-color: #FFE8E6;color: #DB2828;box-shadow: 0px 0px 0px 1px #DB2828 inset, 0px 0px 0px 0px rgba(0, 0, 0, 0);">
+            <div style="padding:5px;">Important</div>
+            <p style="padding:10px;">Once it is deleted, it can not be recovered back. To delete the user, click on the delete button</p>
+        </div>
+
+
+        <div class="col-sm-12" style="padding-top: 5px">
+
+            <button type="button" class="btn btn-info pull-right" ng-click="delete(userData)" style="text-align:center;">
+                <span>Delete</span>
+
+            </button>
+
+            &nbsp;&nbsp;
+            <button type="button" class="btn btn-danger pull-right" ng-click="cancel()" style="text-align:center;margin-right: 10px">Cancel</button>
+        </div>
+
+    </form>
+
+
+</div>

@@ -1,0 +1,55 @@
+<div>
+
+	<a style="margin:10px;" ng-click="addUser()" class="pull-right btn btn-primary btn-outline btn-rounded">Add User</a>
+
+	<div class="jumbotron" style="padding:0">
+		<div class="container">
+
+
+			<table class="table table-striped">
+				<thead>
+					<tr>
+
+						<th>#</th>
+						<th>User Name</th>
+						<th>Role</th>
+						<th>Email</th>
+
+						<th>Action</th>
+
+
+
+					</tr>
+				</thead>
+				<tbody>
+
+					<tr ng-repeat="val in users">
+
+						<td>{{val.id}}</td>
+						<td>{{val.username}}</td>
+						<td ng-style="val.role=='ADMIN'  && {'color':'green'} || {'color': 'red'}">{{val.role}}</td>
+						<td>{{val.email}}</td>
+						<td>
+							<button type="button" class="btn btn-info btn-flat" ng-click="editUser(val)" style="margin: auto;">
+								<i class="glyphicon glyphicon-pencil"></i>
+							</button>
+
+							<button ng-if="val.id!=userid" type="button" class="btn btn-danger btn-flat" ng-click="deleteUser(val)" style="margin-left:10px;">
+								<i class="glyphicon glyphicon-trash"></i>
+							</button>
+
+						</td>
+
+					</tr>
+
+
+				</tbody>
+			</table>
+		</div>
+
+
+
+	</div>
+
+
+</div>

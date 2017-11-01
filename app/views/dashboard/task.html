@@ -1,0 +1,58 @@
+<div>
+
+	<a ng-if="role=='ADMIN'" style="margin:10px;" ng-click="addTask()" class="pull-right btn btn-primary btn-outline btn-rounded">Add Task</a>
+
+	<div class="jumbotron" style="padding:0">
+		<div class="container">
+
+
+			<table style="margin-top:20px;" class="table table-striped">
+				<thead>
+					<tr>
+
+						<th>#</th>
+						<th>Heading</th>
+						<th>Description</th>
+						<th>Due Date</th>
+
+						<th>Action</th>
+
+
+
+					</tr>
+				</thead>
+				<tbody>
+
+					<tr ng-repeat="val in tasks">
+
+						<td>{{val.id}}</td>
+						<td>{{val.heading}}</td>
+						<td>{{val.description}}</td>
+						<td>{{val.due_date}}</td>
+						<td>
+							<button ng-if="role=='ADMIN'" type="button" class="btn btn-info btn-flat" ng-click="editTask(val)" style="margin: auto;">
+								<i class="glyphicon glyphicon-pencil"></i>
+							</button>
+							<button type="button" class="btn btn-warning btn-flat" ng-click="viewTask(val)" style="margin-left:10px;">
+								<i class="glyphicon glyphicon-eye-open"></i>
+							</button>
+
+							<button ng-if="role=='ADMIN'" type="button" class="btn btn-danger btn-flat" ng-click="deleteTask(val)" style="margin-left:10px;">
+								<i class="glyphicon glyphicon-trash"></i>
+							</button>
+
+						</td>
+
+					</tr>
+
+
+				</tbody>
+			</table>
+		</div>
+
+
+
+	</div>
+
+
+</div>

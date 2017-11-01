@@ -1,0 +1,30 @@
+<div class="dashboard-page">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3 col-md-2 sidebar">
+
+       <div class="text-center">
+        <h2 class="brand">Rapido<small></small></h2>
+        <img src="images/rapido.png" class="user-avatar" /><br />
+        <a ng-click=logout() class="btn btn-white btn-outline btn-rounded btn-sm">Logout</a>
+      </div>
+
+      <ul class="nav nav-sidebar">
+        <li ng-if="role=='ADMIN'" ng-class="{active: $state.includes('users')}"><a ui-sref="users">Users <span class="sr-only">(current)</span></a></li>
+        <li ng-class="{active: $state.includes('tasks')}"><a >Tasks</a>
+          <li ng-class="{active: $state.includes('tasks')}"><a ui-sref="tasks"><span style="font-size:11px">List</span></a>
+            
+        <li ng-class="{active: $state.includes('mytasks')}"><a ui-sref="mytasks"><span style="font-size:11px">My Tasks</span></a>
+            
+        </li>
+
+        
+       
+      </ul>
+
+    </div>
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" ui-view>
+    </div>
+  </div>
+</div>
+</div>

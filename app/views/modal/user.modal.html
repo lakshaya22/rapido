@@ -1,0 +1,88 @@
+<div class="modal-header bg-primary text-center " style="padding-bottom: 0px;font-size:20px;">
+    <div class="form-group">
+        <span ng-if="state=='new'">Add User</span>
+        <span ng-if="state=='edit'">Edit User</span>
+
+    </div>
+</div>
+<div class="modal-body" style="overflow: auto;">
+    <form name="user" style="overflow: auto;">
+
+
+
+        <div class="col-sm-6">
+            <!--{{personal}}-->
+            <div class="form-group">
+                <label class="control-label">User Name
+                    <span class="required text-lg">*</span>
+                </label>
+                <input ng-required="true" name="username" type="text" class="form-control" ng-model="userData.username">
+                <!--<span class="help-block m-b-none required" ng-show="!personal.name && clicked">Enter Name</span>-->
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <!--{{personal}}-->
+            <div class="form-group">
+                <label class="control-label">Email
+                    <span class="required text-lg">*</span>
+                </label>
+                <input ng-required="true" name="myEmail" type="text" class="form-control" ng-model="userData.email">
+                <!--<span class="help-block m-b-none required" ng-show="!personal.name && clicked">Enter Name</span>-->
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <label class="control-label">Type</label>
+            <select class="form-control" ng-model="userData.role">
+                <option value="USER">USER</option>
+                <option value="ADMIN">ADMIN</option>
+
+            </select>
+        </div>
+
+        <div ng-if="state=='new'" class="col-sm-6">
+            <!--{{personal}}-->
+            <div class="form-group">
+                <label class="control-label">Password
+                    <span class="required text-lg">*</span>
+                </label>
+                <input name="pass" type="text" class="form-control" ng-model="userData.password">
+                <!--<span class="help-block m-b-none required" ng-show="!personal.name && clicked">Enter Name</span>-->
+            </div>
+        </div>
+
+        <div ng-if="state=='new'" class="col-sm-6">
+            <!--{{personal}}-->
+            <div class="form-group">
+                <label class="control-label">Confirm Password
+                    <span class="required text-lg">*</span>
+                </label>
+                <input name="confirmPass" type="text" class="form-control" ng-model="userData.confirmPassword">
+                <!--<span class="help-block m-b-none required" ng-show="!personal.name && clicked">Enter Name</span>-->
+            </div>
+        </div>
+
+
+
+        <!-- <div class="col-sm-12" style="padding-bottom:30px">
+            <label class="control-label">Enter Log Details</label>
+            <textarea ng-model="logData.content" class="form-control" rows="3"></textarea>
+        </div> -->
+
+        <div class="col-sm-12" style="padding-top: 5px">
+
+            <button ng-disabled="!user.username.$valid || !user.myEmail.$valid" type="button" class="btn btn-info pull-right" ng-click="save(userData)"
+                style="text-align:center;">
+                <span ng-if="state=='new'">Create</span>
+                <span ng-if="state=='edit'">Edit</span>
+            </button>
+
+            &nbsp;&nbsp;
+            <button type="button" class="btn btn-danger pull-right" ng-click="cancel()" style="text-align:center;margin-right: 10px">Cancel</button>
+        </div>
+
+    </form>
+
+
+</div>
