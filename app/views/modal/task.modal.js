@@ -2,9 +2,11 @@ angular.module('yapp')
     .controller('TaskCtrl', function ($scope, $http, $state, restService, $uibModalInstance, taskData, $uibModal) {
 
         var sc = $scope;
+        sc.taskData={};
         sc.taskData = taskData;
         sc.state = "new";
-        if (!!sc.taskData) {
+        console.log(taskData);
+        if (!!taskData.id) {
             sc.state = "edit";
 
             restService.getTaskById(taskData.id)

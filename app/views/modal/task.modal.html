@@ -81,23 +81,24 @@
             &nbsp;&nbsp;
             <button type="button" class="btn btn-danger pull-right" ng-click="cancel()" style="text-align:center;margin-right: 10px">Cancel</button>
         </div>
-
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker1').datetimepicker({
+                    format: 'DD/MM/YYYY',
+                    icons: {
+                        time: "fa fa-clock-o fa-2x",
+                        date: "fa fa-calendar fa-2x",
+                        up: "fa fa-arrow-up",
+                        down: "fa fa-arrow-down"
+                    }
+                });
+    
+            });
+    
+    
+        </script>
+        
     </form>
 
-    <script type="text/javascript">
-        $(function () {
-            $('#datetimepicker1').datetimepicker({
-                format: 'DD/MM/YYYY',
-                icons: {
-                    time: "fa fa-clock-o fa-2x",
-                    date: "fa fa-calendar fa-2x",
-                    up: "fa fa-arrow-up",
-                    down: "fa fa-arrow-down"
-                }
-            });
-
-        });
-
-
-    </script>
+    
 </div>
