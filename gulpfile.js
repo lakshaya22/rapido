@@ -5,7 +5,7 @@ var gulp = require('gulp');
 var karma = require('karma').server;
 var argv = require('yargs').argv;
 var $ = require('gulp-load-plugins')();
-
+var port =process.env.PORT;
 gulp.task('styles', function() {
   return gulp.src('app/styles/main.less')
     .pipe($.plumber())
@@ -88,7 +88,7 @@ gulp.task('connect', ['styles'], function() {
     .use(serveIndex('app'));
 
   require('http').createServer(app)
-    .listen(8080)
+    .listen(port)
     .on('listening', function() {
       console.log('Started connect web server on http://localhost:8080');
     });
@@ -96,7 +96,7 @@ gulp.task('connect', ['styles'], function() {
 
 gulp.task('serve', ['wiredep', 'connect', 'fonts', 'watch'], function() {
   if (argv.open) {
-    require('opn')('http://localhost:8080');
+    require('opn')('http://localhost:port');
   }
 });
 

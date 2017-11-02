@@ -5,6 +5,8 @@
   },
   "scripts": {
     "test": "gulp test",
+    "postinstall": "bower install",
+    "localstart": "PORT=8080 gulp serve",
     "start": "gulp serve"
   },
   "devDependencies": {
