@@ -60,12 +60,13 @@ angular.module('yapp')
         $scope.save = function save(taskData) {
             var mydate = moment($('#dueDate').val(), 'DD/MM/YYYY');
             sc.taskData.due_date = moment(mydate).format('YYYY-MM-DD');
+            console.log(sc.taskData.stage_id);
             sc.taskData.stage_id = sc.taskData.stage_id.id;
             sc.taskData.user_id = sc.taskData.user_id.id;
 
             if (sc.state == 'new') {
 
-                restService.createTask(taskData)
+                restService.createTask(sc.taskData)
                     .then(function (res) {
                         $uibModalInstance.close("success");
 

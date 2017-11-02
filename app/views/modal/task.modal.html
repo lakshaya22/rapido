@@ -49,7 +49,7 @@
 
         <div class="col-sm-12">
             <label class="control-label">User</label>
-            <select class="form-control" ng-options="src.id as src.username for src in users track by src.id" ng-model="taskData.user_id">
+            <select class="form-control" ng-options="src as src.username for src in users track by src.id" ng-model="taskData.user_id">
 
 
             </select>
@@ -57,7 +57,7 @@
 
         <div class="col-sm-12">
             <label class="control-label">Stage</label>
-            <select class="form-control" ng-options="src1.id as src1.stage for src1 in stages track by src1.id" ng-model="taskData.stage_id">
+            <select class="form-control" ng-options="src1 as src1.stage for src1 in stages track by src1.id" ng-model="taskData.stage_id">
 
 
             </select>
@@ -97,7 +97,7 @@
     
     
         </script>
-        
+
     </form>
 
     

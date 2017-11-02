@@ -2,9 +2,10 @@ angular.module('yapp')
     .controller('UserCtrl', function ($scope, $http, $state, restService, $uibModalInstance, userData, $uibModal) {
 
         var sc = $scope;
+        sc.userData={}
         sc.userData = userData;
         sc.state = "new";
-        if (!!sc.userData)
+        if (!!userData.id)
             sc.state = "edit";
         else
             sc.userData.role = "USER";
