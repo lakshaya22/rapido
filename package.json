@@ -9,7 +9,7 @@
     "localstart": "PORT=8080 gulp serve",
     "start": "gulp serve"
   },
-  "devDependencies": {
+  "dependencies": {
     "apache-server-configs": "^2.11.0",
     "chai": "^2.1.0",
     "connect": "^3.3.4",
@@ -49,10 +49,8 @@
     "serve-index": "^1.6.2",
     "serve-static": "^1.9.1",
     "wiredep": "^2.2.2",
-    "yargs": "^3.3.1" 
-  },
-  "dependencies": {
-    "bower": "^1.8.2"
+    "yargs": "^3.3.1",
+    "bower": "^1.8.2" 
   }
   
 }

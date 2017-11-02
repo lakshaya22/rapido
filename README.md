@@ -2,4 +2,4 @@ For running the project just clone the repo, you must have npm,node and bower in
 1. npm install
 2. npm run localstart
 
-After doing guip serve u can open the application at localhost:8080
+After doing this u can open the application at localhost:8080
