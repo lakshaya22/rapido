@@ -3,3 +3,5 @@ For running the project just clone the repo, you must have npm,node and bower in
 2. npm run localstart
 
 After doing this u can open the application at localhost:8080
+
+Live Demo can be found at : lakshaya.herokuapp.com
