@@ -6458,6 +6458,13 @@ button.close {
     display: none !important;
   }
 }
+.ui-base {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
 .login-page {
   position: absolute;
   top: 0;

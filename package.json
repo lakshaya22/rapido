@@ -49,7 +49,8 @@
     "serve-index": "^1.6.2",
     "serve-static": "^1.9.1",
     "wiredep": "^2.2.2",
-    "yargs": "^3.3.1"
-  },
-  "dependencies": {}
+    "yargs": "^3.3.1",
+    "bower": "^1.8.2"
+  }
+  
 }
